@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thuslima & Azeem | Wedding Invitation</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="loader">
+
+    <div class="envelope">
+
+        <div class="flap"></div>
+
+        <div class="letter">
+
+            
+            <p></p>
+            <p></p>
+            <P></P>
+            
+            <p> 
+                T & A Wedding Invitation
+            </p>
+
+            <button id="openInvite">
+
+                Open Invitation
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+    
+
+    
+
+    <section class="hero" id="home">
+
+        <div class="left">
+
+            <p class="invite">
+                Together with our families
+            </p>
+            <p class="verse">
+    "And We created you in pairs."
+</p>
+
+<p class="verse-ref">
+    — Qur'an 78:8 (Surah An-Naba)
+</p>
+
+            <h1>Thuslima</h1>
+
+            <div class="and-symbol">
+    <span></span>
+    &
+    <span></span>
+</div>
+
+            <h1>Azeem</h1>
+            <p class="hero-date">
+
+    25 October 2026 • 12:00 PM
+
+</p>
+
+            <p class="subtitle">
+                We joyfully invite you to celebrate our wedding.
+            </p>
+
+        <button id="exploreBtn">
+    Explore Celebration ↓
+</button> 
+
+        </div>
+
+        <div class="right">
+
+            <div class="image-box">
+
+                <img src="images/couple.png"
+                    alt="Thuslima & Azeem"
+                    class="couple-image">
+
+            </div>
+
+        </div>
+
+    </section>
+    <section class="events" id="events">
+
+    <h2>Wedding Celebrations</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+
+                <h3>Reception</h3>
+
+                <h4>24 October 2026 • 5:00 PM</h4>
+
+                <p>Popular Auditorium, Manavalakurichi</p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+
+                <h3>Nikkah</h3>
+
+                <h4>25 October 2026 • 12:00 PM</h4>
+
+                <p>Fr. Lopez Auditorium, Colachel</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="venue" id="venue">
+
+    <h2>Venue</h2>
+
+    <div class="venue-container">
+
+        <!-- Wedding Venue -->
+
+        <div class="venue-card">
+
+            <h3>💍 Wedding Ceremony</h3>
+
+            <h4>Fr. Lopez Auditorium</h4>
+
+            <p>Colachel, Kanyakumari</p>
+
+            <a href="https://maps.app.goo.gl/565HaSBcNLS5tich6?g_st=aw"
+               target="_blank"
+               class="map-btn">
+
+                📍 Get Directions
+
+            </a>
+
+        </div>
+
+        <!-- Reception Venue -->
+
+        <div class="venue-card">
+
+            <h3>🎉 Reception</h3>
+
+            <h4>Popular Auditorium</h4>
+
+            <p>Manavalakurichi, Kanyakumari</p>
+
+            <a href="https://maps.app.goo.gl/mFAqVBVzAbKYASPE6?g_st=aw"
+               target="_blank"
+               class="map-btn">
+
+                📍 Get Directions
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="story" id="story">
+
+    <div class="story-content">
+
+        <h2>Our Story</h2>
+
+        <p>
+            Two hearts, one beautiful journey.
+            With the blessings of our families and Almighty Allah,
+            we begin this new chapter of love, faith, and togetherness.
+        </p>
+
+        <p>
+            Your presence, prayers, and blessings will make our
+            celebration truly memorable.
+        </p>
+
+    </div>
+
+</section>
+<section class="upload" id="upload">
+
+    <h2>Share Your Memories</h2>
+
+    <p>
+        Captured a beautiful moment?
+        Upload your photos and videos here.
+    </p>
+
+    <input type="file"
+           id="fileInput"
+           accept="image/*,video/*"
+           multiple
+           hidden>
+
+    <button class="upload-btn" id="uploadBtn">
+        📸 Choose Photos & Videos
+    </button>
+
+    <div class="progress-container">
+
+        <div class="progress-bar" id="progressBar"></div>
+
+    </div>
+
+    <p id="status"></p>
+
+</section>
+<section class="countdown">
+
+    <h2>Wedding Countdown</h2>
+
+    <div class="timer">
+
+        <div class="box">
+            <span id="days">00</span>
+            <p>Days</p>
+        </div>
+
+        <div class="box">
+            <span id="hours">00</span>
+            <p>Hours</p>
+        </div>
+
+        <div class="box">
+            <span id="minutes">00</span>
+            <p>Minutes</p>
+        </div>
+
+        <div class="box">
+            <span id="seconds">00</span>
+            <p>Seconds</p>
+        </div>
+
+    </div>
+    </section>
+
+<footer class="footer">
+
+    <h2>Thuslima & Azeem</h2>
+
+    <p>
+        Thank you for being a part of our special day.
+    </p>
+
+    <p class="verse">
+        "And We created you in pairs."
+    </p>
+
+    <span>— Surah An-Naba (78:8)</span>
+
+    <p class="made">
+        Made with ❤️ for our beloved family & friends
+    </p>
+
+</footer>
+    
+    <div id="petals"></div>
+    <script src="script.js"></script>
+    
+
+</body>
+
+</html>

@@ -180,3 +180,20 @@ fileInput.addEventListener("change", async () => {
     }
 
 });
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", function () {
+
+    reveals.forEach(function (element) {
+
+        const top = element.getBoundingClientRect().top;
+
+        if (top < window.innerHeight - 120) {
+
+            element.classList.add("active");
+
+        }
+
+    });
+
+});

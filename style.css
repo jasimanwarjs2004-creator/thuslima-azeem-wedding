@@ -797,132 +797,1696 @@ box-shadow:0 15px 40px rgba(181,139,71,.08);
    Premium Opening Screen
 ========================== */
 
-#loader{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100vw;
-    height:100vh;
+/* =========================================================
+   PREMIUM INVITATION COVER
+   THUSLIMA & AZEEM
+   ========================================================= */
 
-    background:#FFF8F2;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+/* =========================================================
+   LOADER
+   ========================================================= */
 
-    z-index:999999;
+/* =========================================================
+   PREMIUM INVITATION COVER
+   THUSLIMA & AZEEM
+   ========================================================= */
 
-    transition:opacity 1s ease;
 
-    overflow:hidden;
+/* =========================================================
+   LOADER
+   ========================================================= */
+
+#loader {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100dvh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(200,169,106,0.12),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #fffdf9,
+            #fff8f1,
+            #fffdf8
+        );
+
+    z-index: 999999;
+
+    overflow: hidden;
+
+    transition:
+        opacity 0.8s ease;
 }
 
-/* Envelope */
 
-.envelope{
+/* =========================================================
+   INVITATION CARD
+   ========================================================= */
 
-    position:relative;
+.invitation-cover {
 
-    width:420px;
-    height:260px;
+    position: relative;
 
-    background:#ffffff;
+    width: 390px;
+    height: 590px;
 
-    border-radius:12px;
+    overflow: hidden;
 
-    box-shadow:0 25px 60px rgba(0,0,0,.18);
+    border-radius: 20px;
 
-    overflow:hidden;
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf9,
+            #f8eee1
+        );
+
+    border: 1px solid
+        rgba(181,139,71,0.55);
+
+    box-shadow:
+
+        0 30px 70px
+        rgba(80,60,35,0.18),
+
+        0 8px 25px
+        rgba(80,60,35,0.08);
+
+    flex-shrink: 0;
+
+    transition:
+        transform 1s ease,
+        opacity 0.8s ease;
+}
+
+
+/* =========================================================
+   OUTER FRAME
+   ========================================================= */
+/* =========================================================
+   INVITATION OPENING
+   ========================================================= */
+
+.invitation-cover {
+    transition:
+        transform 1.1s ease,
+        opacity 0.8s ease;
+}
+
+
+/* Slightly zoom the whole card */
+
+.invitation-cover.open {
+    transform: scale(1.03);
+}
+
+
+/* =========================================================
+   LEFT + RIGHT PANELS
+   ========================================================= */
+
+.cover-left,
+.cover-right {
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    width: 50%;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    transition:
+        transform 1.1s
+        cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+
+/* LEFT */
+
+.cover-left {
+
+    left: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.08),
+            rgba(200,169,106,0.04)
+        );
+
+    border-right:
+        1px solid
+        rgba(181,139,71,0.15);
+
+    transform: translateX(0);
+}
+
+
+/* RIGHT */
+
+.cover-right {
+
+    right: 0;
+
+    background:
+        linear-gradient(
+            270deg,
+            rgba(255,255,255,0.08),
+            rgba(200,169,106,0.04)
+        );
+
+    border-left:
+        1px solid
+        rgba(181,139,71,0.15);
+
+    transform: translateX(0);
+}
+
+
+/* =========================================================
+   OPEN → PANELS MOVE OUT
+   ========================================================= */
+
+.invitation-cover.open .cover-left {
+
+    transform: translateX(-100%);
+}
+
+
+.invitation-cover.open .cover-right {
+
+    transform: translateX(100%);
+}
+
+
+/* =========================================================
+   CENTER CONTENT
+   ========================================================= */
+
+.invitation-content {
+
+    transition:
+        transform 0.9s ease,
+        opacity 0.65s ease;
+}
+
+
+.invitation-cover.open .invitation-content {
+
+    transform:
+        scale(1.08);
+
+    opacity: 0;
+}
+
+
+/* =========================================================
+   CENTER LINE
+   ========================================================= */
+
+.center-line {
+
+    transition:
+        opacity 0.5s ease;
+}
+
+
+.invitation-cover.open .center-line {
+
+    opacity: 0;
+}
+
+
+/* =========================================================
+   SEAL
+   ========================================================= */
+
+.seal-button {
+
+    transition:
+        transform 0.5s ease,
+        opacity 0.4s ease;
+}
+
+
+.invitation-cover.open .seal-button {
+
+    transform:
+        scale(1.25);
+
+    opacity: 0;
+}
+.invitation-cover::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border:
+        1px solid
+        rgba(181,139,71,0.55);
+
+    border-radius: 14px;
+
+    pointer-events: none;
+
+    z-index: 8;
+}
+
+
+/* =========================================================
+   INNER FRAME
+   ========================================================= */
+
+.invitation-cover::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 23px;
+
+    border:
+        1px solid
+        rgba(200,169,106,0.25);
+
+    border-radius: 10px;
+
+    pointer-events: none;
+
+    z-index: 8;
+}
+
+
+/* =========================================================
+   SUBTLE ORNAMENTAL BACKGROUND
+   ========================================================= */
+
+.cover-pattern {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.35;
+
+    background:
+
+        radial-gradient(
+            ellipse at 15% 18%,
+            transparent 0,
+            transparent 35px,
+            rgba(181,139,71,0.16) 36px,
+            transparent 38px
+        ),
+
+        radial-gradient(
+            ellipse at 85% 18%,
+            transparent 0,
+            transparent 35px,
+            rgba(181,139,71,0.16) 36px,
+            transparent 38px
+        ),
+
+        radial-gradient(
+            ellipse at 15% 82%,
+            transparent 0,
+            transparent 35px,
+            rgba(181,139,71,0.16) 36px,
+            transparent 38px
+        ),
+
+        radial-gradient(
+            ellipse at 85% 82%,
+            transparent 0,
+            transparent 35px,
+            rgba(181,139,71,0.16) 36px,
+            transparent 38px
+        );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   SIDE ORNAMENTS
+   ========================================================= */
+
+.cover-pattern::before {
+
+    content: "❧";
+
+    position: absolute;
+
+    top: 55px;
+    left: 35px;
+
+    font-size: 85px;
+
+    color:
+        rgba(181,139,71,0.20);
+
+    transform:
+        rotate(-20deg);
+}
+
+
+.cover-pattern::after {
+
+    content: "❧";
+
+    position: absolute;
+
+    top: 55px;
+    right: 35px;
+
+    font-size: 85px;
+
+    color:
+        rgba(181,139,71,0.20);
+
+    transform:
+        scaleX(-1)
+        rotate(-20deg);
+}
+
+
+/* =========================================================
+   CENTER LINE
+   ========================================================= */
+
+.center-line {
+
+    position: absolute;
+
+    top: 35px;
+    bottom: 35px;
+
+    left: 50%;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(181,139,71,0.65) 10%,
+            rgba(181,139,71,0.65) 90%,
+            transparent
+        );
+
+    transform:
+        translateX(-50%);
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   CENTER LINE LITTLE DIAMONDS
+   ========================================================= */
+
+.center-line::before,
+.center-line::after {
+
+    content: "◆";
+
+    position: absolute;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    color:
+        #b58b47;
+
+    font-size: 7px;
+
+    background:
+        #f9efe3;
+
+    padding: 5px 0;
+}
+
+.center-line::before {
+    top: 80px;
+}
+
+.center-line::after {
+    bottom: 80px;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.invitation-content {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 50px 40px;
+}
+
+
+/* =========================================================
+   TOP ORNAMENT
+   ========================================================= */
+
+.small-ornament {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 32px;
+
+    color:
+        #b58b47;
+
+    margin-bottom: 8px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   SMALL TITLE
+   ========================================================= */
+
+.invitation-small {
+
+    margin: 0 0 22px;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color:
+        #927443;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   T & A
+   ========================================================= */
+
+.main-monogram {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 67px;
+
+    line-height: 1;
+
+    color:
+        #b58b47;
+
+    margin-bottom: 14px;
+
+    text-shadow:
+        0 3px 12px
+        rgba(181,139,71,0.15);
+}
+
+
+.main-monogram span {
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 21px;
+
+    color:
+        #c8a96a;
+
+    margin: 0 4px;
+}
+
+
+/* =========================================================
+   DECORATIVE DIVIDER
+   ========================================================= */
+
+.decorative-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-bottom: 25px;
+}
+
+
+.decorative-divider span {
+
+    width: 42px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #c8a96a
+        );
+}
+
+
+.decorative-divider span:last-child {
+
+    background:
+        linear-gradient(
+            to left,
+            transparent,
+            #c8a96a
+        );
+}
+
+
+.decorative-divider i {
+
+    font-style: normal;
+
+    font-size: 8px;
+
+    color:
+        #b58b47;
+}
+
+
+/* =========================================================
+   COUPLE NAMES
+   ========================================================= */
+
+.couple-names {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 49px;
+
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    color:
+        #a47b42;
+
+    margin: 0 0 18px;
+
+    white-space: nowrap;
+}
+
+
+.couple-names span {
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 18px;
+
+    color:
+        #c8a96a;
+
+    margin: 0 4px;
+}
+
+
+/* =========================================================
+   DATE
+   ========================================================= */
+
+.invite-date {
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color:
+        #8c785b;
+
+    margin: 0 0 7px;
+}
+
+
+/* =========================================================
+   INSHA ALLAH
+   ========================================================= */
+
+.invite-location {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 22px;
+
+    color:
+        #b58b47;
+
+    margin: 0 0 20px;
+}
+
+
+/* =========================================================
+   SEAL
+   ========================================================= */
+
+.seal-button {
+
+    position: relative;
+
+    width: 82px;
+    height: 82px;
+
+    min-width: 82px;
+
+    margin: 0;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    border:
+        2px solid
+        rgba(181,139,71,0.65);
+
+    background:
+        radial-gradient(
+            circle,
+            #f5d6d0 0%,
+            #ecc3ba 55%,
+            #dca79d 100%
+        );
+
+    color:
+        #8f604f;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow:
+
+        0 7px 18px
+        rgba(126,88,70,0.18),
+
+        inset 0 0 0 5px
+        rgba(255,255,255,0.20);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Gold outer ring */
+
+.seal-button::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -6px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(181,139,71,0.50);
+}
+
+
+/* Seal shine */
+
+.seal-button::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 24px;
+    height: 10px;
+
+    top: 16px;
+    left: 20px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.28);
+
+    transform:
+        rotate(-30deg);
+}
+
+
+/* Hover */
+
+.seal-button:hover {
+
+    transform:
+        scale(1.08);
+
+    box-shadow:
+
+        0 12px 28px
+        rgba(126,88,70,0.25),
+
+        inset 0 0 0 5px
+        rgba(255,255,255,0.25);
+}
+
+
+/* =========================================================
+   SEAL MONOGRAM
+   ========================================================= */
+
+.seal-monogram {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 31px;
+
+    line-height: 1;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.seal-monogram span {
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 12px;
+
+    margin: 0 2px;
+}
+
+
+/* =========================================================
+   TAP TEXT
+   ========================================================= */
+
+.tap-text {
+
+    margin: 14px 0 0;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+    color:
+        #927d60;
+}
+
+
+/* =========================================================
+   BOTTOM ORNAMENT
+   ========================================================= */
+
+.bottom-ornament {
+
+    position: absolute;
+
+    bottom: 34px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 28px;
+
+    color:
+        rgba(181,139,71,0.65);
+
+    z-index: 6;
+}
+
+
+/* =========================================================
+   OPENING ANIMATION
+   ========================================================= */
+
+/*
+   Your existing JS adds:
+   .envelope.open
+
+   We use the same idea here.
+*/
+
+.invitation-cover.open {
+
+    transform:
+        scale(1.04);
 
 }
 
-/* Flap */
 
-.flap{
+/* Left/right cover movement */
 
-    position:absolute;
+.invitation-cover.open .cover-left {
 
-    top:0;
-    left:0;
-
-    width:100%;
-    height:120px;
-
-    background:#C8A96A;
-
-    clip-path:polygon(0 0,100% 0,50% 100%);
-
-    transform-origin:top center;
-
-    transition:transform .8s ease;
-
-    z-index:3;
-
-    backface-visibility:hidden;
-
+    transform:
+        translateX(-105%);
 }
 
-/* Letter */
 
-.letter{
+.invitation-cover.open .cover-right {
 
-    position:absolute;
-
-    top:35%;
-    left:50%;
-
-    transform:translate(-50%,-35%);
-
-    width:100%;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    z-index:2;
-
-    transition:transform .8s ease;
-
+    transform:
+        translateX(105%);
 }
 
-.letter h1{
 
-    font-family:'Great Vibes',cursive;
+/* Content moves slightly forward */
 
-    font-size:60px;
+.invitation-cover.open .invitation-content {
 
-    color:#B58B47;
+    transform:
+        scale(1.03);
 
-    margin:0;
-
+    transition:
+        transform 0.9s ease;
 }
 
-.letter p{
 
-    margin:10px 0 25px;
+/* =========================================================
+   OPENING PANELS
+   ========================================================= */
 
-    letter-spacing:2px;
+.cover-left,
+.cover-right {
 
-    font-size:18px;
+    position: absolute;
 
+    top: 0;
+    bottom: 0;
+
+    width: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.12),
+            transparent
+        );
+
+    z-index: 7;
+
+    pointer-events: none;
+
+    transition:
+        transform 0.95s
+        cubic-bezier(.77,0,.18,1);
 }
 
-/* ===== OPEN ENVELOPE ===== */
 
-.envelope.open .flap{
+/* These are extremely subtle —
+   they give the card a "split open" feeling */
 
-    transform:rotateX(180deg);
+.cover-left {
 
+    left: 0;
+
+    border-right:
+        1px solid
+        rgba(181,139,71,0.10);
 }
 
-.envelope.open .letter{
 
-    transform:translate(-50%,-55%);
+.cover-right {
 
+    right: 0;
+
+    border-left:
+        1px solid
+        rgba(181,139,71,0.10);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    #loader {
+
+        padding: 15px;
+    }
+
+
+    .invitation-cover {
+
+        width:
+            min(88vw, 340px);
+
+        height:
+            min(150vw, 540px);
+
+        border-radius: 17px;
+    }
+
+
+    .invitation-cover::before {
+
+        inset: 11px;
+    }
+
+
+    .invitation-cover::after {
+
+        inset: 20px;
+    }
+
+
+    .invitation-content {
+
+        padding:
+            40px 25px;
+    }
+
+
+    .small-ornament {
+
+        font-size: 26px;
+
+        margin-bottom: 5px;
+    }
+
+
+    .invitation-small {
+
+        font-size: 8px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .main-monogram {
+
+        font-size:
+            clamp(
+                52px,
+                16vw,
+                64px
+            );
+
+        margin-bottom: 11px;
+    }
+
+
+    .main-monogram span {
+
+        font-size: 18px;
+    }
+
+
+    .decorative-divider {
+
+        margin-bottom: 21px;
+    }
+
+
+    .decorative-divider span {
+
+        width: 30px;
+    }
+
+
+    .couple-names {
+
+        font-size:
+            clamp(
+                35px,
+                11vw,
+                45px
+            );
+
+        margin-bottom: 15px;
+    }
+
+
+    .couple-names span {
+
+        font-size: 15px;
+    }
+
+
+    .invite-date {
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .invite-location {
+
+        font-size: 19px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .seal-button {
+
+        width: 74px;
+        height: 74px;
+
+        min-width: 74px;
+    }
+
+
+    .seal-monogram {
+
+        font-size: 28px;
+    }
+
+
+    .tap-text {
+
+        font-size: 6px;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    .bottom-ornament {
+
+        bottom: 28px;
+
+        font-size: 24px;
+    }
+
+
+    .cover-pattern::before,
+    .cover-pattern::after {
+
+        font-size: 65px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .invitation-cover {
+
+        width: 285px;
+
+        height: 465px;
+    }
+
+
+    .invitation-content {
+
+        padding:
+            30px 20px;
+    }
+
+
+    .small-ornament {
+
+        font-size: 22px;
+    }
+
+
+    .invitation-small {
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .main-monogram {
+
+        font-size: 47px;
+    }
+
+
+    .couple-names {
+
+        font-size: 31px;
+    }
+
+
+    .invite-date {
+
+        font-size: 7px;
+    }
+
+
+    .invite-location {
+
+        font-size: 17px;
+    }
+
+
+    .seal-button {
+
+        width: 68px;
+        height: 68px;
+
+        min-width: 68px;
+    }
+
+
+    .seal-monogram {
+
+        font-size: 25px;
+    }
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+   ========================================================= */
+
+@media
+(max-height: 600px)
+and (orientation: landscape) {
+
+    .invitation-cover {
+
+        width: 270px;
+
+        height: 390px;
+    }
+
+
+    .invitation-content {
+
+        padding: 20px;
+    }
+
+
+    .small-ornament {
+
+        font-size: 19px;
+    }
+
+
+    .invitation-small {
+
+        font-size: 6px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .main-monogram {
+
+        font-size: 38px;
+
+        margin-bottom: 7px;
+    }
+
+
+    .decorative-divider {
+
+        margin-bottom: 8px;
+    }
+
+
+    .couple-names {
+
+        font-size: 27px;
+
+        margin-bottom: 6px;
+    }
+
+
+    .invite-date {
+
+        font-size: 6px;
+    }
+
+
+    .invite-location {
+
+        font-size: 15px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .seal-button {
+
+        width: 58px;
+        height: 58px;
+
+        min-width: 58px;
+    }
+
+
+    .seal-monogram {
+
+        font-size: 21px;
+    }
+
+
+    .tap-text {
+
+        margin-top: 7px;
+
+        font-size: 5px;
+    }
+
+
+    .bottom-ornament {
+
+        bottom: 18px;
+
+        font-size: 18px;
+    }
+}
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    #loader {
+
+        padding: 15px;
+    }
+
+
+    .invitation-cover {
+
+        width:
+            min(88vw, 340px);
+
+        height:
+            min(150vw, 540px);
+
+        border-radius: 17px;
+    }
+
+
+    .invitation-cover::before {
+
+        inset: 11px;
+    }
+
+
+    .invitation-cover::after {
+
+        inset: 20px;
+    }
+
+
+    .invitation-content {
+
+        padding:
+            40px 25px;
+    }
+
+
+    .small-ornament {
+
+        font-size: 26px;
+
+        margin-bottom: 5px;
+    }
+
+
+    .invitation-small {
+
+        font-size: 8px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .main-monogram {
+
+        font-size:
+            clamp(
+                52px,
+                16vw,
+                64px
+            );
+
+        margin-bottom: 11px;
+    }
+
+
+    .main-monogram span {
+
+        font-size: 18px;
+    }
+
+
+    .decorative-divider {
+
+        margin-bottom: 21px;
+    }
+
+
+    .decorative-divider span {
+
+        width: 30px;
+    }
+
+
+    .couple-names {
+
+        font-size:
+            clamp(
+                35px,
+                11vw,
+                45px
+            );
+
+        margin-bottom: 15px;
+    }
+
+
+    .couple-names span {
+
+        font-size: 15px;
+    }
+
+
+    .invite-date {
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .invite-location {
+
+        font-size: 19px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .seal-button {
+
+        width: 74px;
+        height: 74px;
+
+        min-width: 74px;
+    }
+
+
+    .seal-monogram {
+
+        font-size: 28px;
+    }
+
+
+    .tap-text {
+
+        font-size: 6px;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    .bottom-ornament {
+
+        bottom: 28px;
+
+        font-size: 24px;
+    }
+
+
+    .cover-pattern::before,
+    .cover-pattern::after {
+
+        font-size: 65px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .invitation-cover {
+
+        width: 285px;
+
+        height: 465px;
+    }
+
+
+    .invitation-content {
+
+        padding:
+            30px 20px;
+    }
+
+
+    .small-ornament {
+
+        font-size: 22px;
+    }
+
+
+    .invitation-small {
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .main-monogram {
+
+        font-size: 47px;
+    }
+
+
+    .couple-names {
+
+        font-size: 31px;
+    }
+
+
+    .invite-date {
+
+        font-size: 7px;
+    }
+
+
+    .invite-location {
+
+        font-size: 17px;
+    }
+
+
+    .seal-button {
+
+        width: 68px;
+        height: 68px;
+
+        min-width: 68px;
+    }
+
+
+    .seal-monogram {
+
+        font-size: 25px;
+    }
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+   ========================================================= */
+
+@media
+(max-height: 600px)
+and (orientation: landscape) {
+
+    .invitation-cover {
+
+        width: 270px;
+
+        height: 390px;
+    }
+
+
+    .invitation-content {
+
+        padding: 20px;
+    }
+
+
+    .small-ornament {
+
+        font-size: 19px;
+    }
+
+
+    .invitation-small {
+
+        font-size: 6px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .main-monogram {
+
+        font-size: 38px;
+
+        margin-bottom: 7px;
+    }
+
+
+    .decorative-divider {
+
+        margin-bottom: 8px;
+    }
+
+
+    .couple-names {
+
+        font-size: 27px;
+
+        margin-bottom: 6px;
+    }
+
+
+    .invite-date {
+
+        font-size: 6px;
+    }
+
+
+    .invite-location {
+
+        font-size: 15px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .seal-button {
+
+        width: 58px;
+        height: 58px;
+
+        min-width: 58px;
+    }
+
+
+    .seal-monogram {
+
+        font-size: 21px;
+    }
+
+
+    .tap-text {
+
+        margin-top: 7px;
+
+        font-size: 5px;
+    }
+
+
+    .bottom-ornament {
+
+        bottom: 18px;
+
+        font-size: 18px;
+    }
 }
 
 #openInvite{

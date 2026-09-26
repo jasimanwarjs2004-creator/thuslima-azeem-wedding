@@ -11,41 +11,46 @@ const openInvite = document.getElementById("openInvite");
 
 openInvite.addEventListener("click", function () {
 
-    const envelope = document.querySelector("#loader .envelope");
-    const loader = document.getElementById("loader");
+    const invitation =
+        document.querySelector("#loader .invitation-cover");
 
-    // Open the flap
-    envelope.classList.add("open");
+    const loader =
+        document.getElementById("loader");
 
-    // Start flower petals
-    createPetals();
+    // Open the invitation
+    invitation.classList.add("open");
 
-    // Wait for opening animation
+    // Give the opening animation time to happen
     setTimeout(function () {
 
-        // Fade out loader
-        loader.style.opacity = "0";
-        loader.style.pointerEvents = "none";
+        // Start petals AFTER invitation opens
+        createPetals();
 
-        // Remove loader completely
+        // Fade out the invitation screen
         setTimeout(function () {
 
-            loader.remove();
+            loader.style.opacity = "0";
+            loader.style.pointerEvents = "none";
 
-            document.body.classList.remove("loading");
+            // Remove loader after fade
+            setTimeout(function () {
 
-            // Show hero section
-            document.getElementById("home").scrollIntoView({
-                behavior: "smooth"
-            });
+                loader.remove();
 
-        }, 800);
+                document.body.classList.remove("loading");
+
+                // Go to main wedding page
+                document.getElementById("home").scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }, 800);
+
+        }, 300);
 
     }, 1200);
 
 });
-
-
 const exploreBtn = document.getElementById("exploreBtn");
 
 exploreBtn.addEventListener("click", () => {
